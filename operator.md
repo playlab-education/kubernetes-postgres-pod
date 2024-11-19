@@ -4,17 +4,12 @@ This bundle was designed for deploying a Postgres docker image onto a Kubernetes
 
 ### Steps to deploy
 
-1. [Fork](https://github.com/mclacore/postgres-bundle/fork) this repo.
+1. Deploy this bundle connected to your Kubernetes cluster.
 
-2. Run `mass bundle publish` to publish the bundle to your Massdriver organization.
-
-3. Drag out onto the canvas and deploy.
-
-4. `exec` into your Kubernetes cluster using `KUBECONFIG` and `kubectl` using `kubectl exec -it <name of postgres pod> -- sh`
+2. `exec` into your Kubernetes cluster using `KUBECONFIG` and `kubectl` using `kubectl exec -it <name of postgres pod> -- sh`
 
 For a guide on how to do this, go [here](https://docs.massdriver.cloud/runbooks/kubernetes/access)
 
-5. Connect to your Postgres database using `psql -h <hostname> -U <username> -p <port> -d <database>`.
+3. Connect to your Postgres database using `psql -h <hostname> -U <username> -p <port> -d <database>`.
 
-> [!TIP]
-> You can find your `hostname`, `username`, `port`, and `password` by downloading the artifact for your Postgres manifest, under your `Artifact` tab. If it's a new Postgres deployment, the `database` is most likely `postgres`.
+**Note**: You can find your `hostname`, `username`, `port`, and `password` by downloading the artifact for your Postgres manifest, under your `Artifact` tab. If it's a new Postgres deployment, the `database` is most likely `postgres`.
