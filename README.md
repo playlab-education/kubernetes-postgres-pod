@@ -16,5 +16,5 @@ For a guide on how to do this, go [here](https://docs.massdriver.cloud/runbooks/
 
 5. Connect to your Postgres database using `psql -h <hostname> -U <username> -p <port> -d <database>`.
 
-!> [!TIP]
+> [!TIP]
 > You can find your `hostname`, `username`, `port`, and `password` by downloading the artifact for your Postgres manifest, under your `Artifact` tab. If it's a new Postgres deployment, the `database` is most likely `postgres`.
