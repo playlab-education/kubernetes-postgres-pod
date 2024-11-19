@@ -1,0 +1,5 @@
+commonLabels: {}
+
+pod:
+  annotations: {}
+  labels: {}

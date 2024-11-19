@@ -1,0 +1,28 @@
+schema: draft-07
+name: postgres
+description: Postgres pod bundle to deploy onto Kubernetes in Massdriver.
+source_url: github.com/YOUR_ORG/postgres
+access: private
+type: infrastructure
+
+params:
+  required:
+    - namespace
+  properties:
+    namespace:
+      title: Kubernetes Namespace
+      description: Application will be deployed into this namespace. If the namespace doesn't exist, it will be created.
+      $ref: https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json
+      default: default
+
+connections:
+  required:
+    - kubernetes_cluster
+  properties:
+    kubernetes_cluster:
+      $ref: massdriver/kubernetes-cluster
+
+ui:
+  ui:order:
+    - namespace
+    - '*'
