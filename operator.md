@@ -1,8 +1,8 @@
-# Postgres pod bundle
+### Postgres pod bundle
 
 This bundle was designed for deploying a Postgres docker image onto a Kubernetes cluster so that it can be exec'd into.
 
-## Steps to deploy
+### Steps to deploy
 
 1. [Fork](https://github.com/mclacore/postgres-bundle/fork) this repo.
 
