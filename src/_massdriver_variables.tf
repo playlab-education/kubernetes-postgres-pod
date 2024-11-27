@@ -68,3 +68,11 @@ variable "md_metadata" {
 variable "namespace" {
   type = string
 }
+// Auto-generated variable declarations from massdriver.yaml
+variable "storage_class" {
+  type    = string
+  default = null
+}
+variable "storage_size" {
+  type = string
+}

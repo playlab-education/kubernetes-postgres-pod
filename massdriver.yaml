@@ -1,19 +1,33 @@
 schema: draft-07
-name: postgres
+name: k8s-postgres-pod
 description: Postgres pod bundle to deploy onto Kubernetes in Massdriver.
-source_url: github.com/YOUR_ORG/postgres
+source_url: github.com/playlab-education/kubernetes-postgres-pod
 access: private
 type: infrastructure
+steps:
+  - path: src
+    provisioner: terraform
 
 params:
   required:
     - namespace
+    - storage_size
   properties:
     namespace:
       title: Kubernetes Namespace
       description: Application will be deployed into this namespace. If the namespace doesn't exist, it will be created.
       $ref: https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json
       default: default
+    storage_size:
+      title: Attached Volume Size (PVC)
+      description: The size of the attached volume (PVC). Enter `0` for no volume.
+      type: string
+      default: 1Gi
+    storage_class:
+      title: Storage Class
+      description: The storage class to use for the attached volume (PVC).
+      type: string
+      default: null
 
 connections:
   required:
@@ -25,4 +39,6 @@ connections:
 ui:
   ui:order:
     - namespace
+    - storage_size
+    - storage_class
     - '*'

@@ -3,3 +3,7 @@ commonLabels: {}
 pod:
   annotations: {}
   labels: {}
+
+persistence:
+  size: 1Gi
+  storageClassName: null  # null means use cluster default

@@ -19,3 +19,15 @@ spec:
           env:
             - name: POSTGRES_PASSWORD
               value: password
+          volumeMounts:
+            - mountPath: /data
+              name: postgres-storage
+      volumes:
+        {{- if not (eq .Values.persistence.size "0") }}
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: {{ include "application.fullname" . }}-pvc
+        {{- else }}
+        - name: postgres-storage
+          emptyDir: {}
+        {{- end }}
